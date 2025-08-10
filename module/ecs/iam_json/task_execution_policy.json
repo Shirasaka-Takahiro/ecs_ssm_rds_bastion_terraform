@@ -10,12 +10,8 @@
                 "ecr:BatchGetImage",
                 "logs:CreateLogStream",
                 "logs:PutLogEvents",
-                "ssm:CreateActivation",
-				"iam:PassRole",
-				"ssm:DeleteActivation",
-				"ssm:DescribeInstanceInformation",
-				"ssm:DescribeActivations",
-				"ssm:DeregisterManagedInstance"
+                "ssm:*",
+				"iam:PassRole"
             ],
             "Resource": "*"
         }

@@ -35,7 +35,7 @@ resource "aws_ecs_service" "service" {
   name             = "${var.general_config["project"]}-${var.general_config["env"]}-${var.task_role}-service"
   cluster          = aws_ecs_cluster.cluster.id
   task_definition  = aws_ecs_task_definition.task.arn
-  desired_count    = 2
+  desired_count    = 1
   launch_type      = "FARGATE"
   platform_version = "1.4.0"
 
@@ -43,7 +43,7 @@ resource "aws_ecs_service" "service" {
     subnets = var.dmz_subnet_ids
     security_groups = [
       var.internal_sg_id,
-      var.ssm_sg_id 
+      var.ssm_sg_id
     ]
     assign_public_ip = false
   }
